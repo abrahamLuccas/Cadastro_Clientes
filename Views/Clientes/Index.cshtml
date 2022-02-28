@@ -1,0 +1,95 @@
+﻿@model IEnumerable<cadastro_clientes.Models.Cliente>
+
+    @{
+        ViewData["Title"] = "Lista Tarefas";
+    }
+    <h1>Tarefas</h1>
+
+    <p>
+        <a class ="btn btn-success" asp-action="Create">Cadastrar Cliente</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pais)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bairro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rua)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numero)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Complemento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cep)
+                </th>
+           </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Telefone
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Pais
+                </td>
+                <td>
+                    @item.UF
+                </td>
+                <td>
+                    @item.Cidade
+                </td>
+                <td>
+                    @item.Bairro
+                </td>
+                <td>
+                    @item.Rua
+                </td>
+                <td>
+                    @item.Numero
+                </td>
+                <td>
+                    @item.Complemento
+                </td>
+                <td>
+                    @item.Cep
+                </td>
+                <td>
+       <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+       <a style="margin-top:10px" class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+       <a style="margin-top:10px" class="btn btn-outline-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    
